@@ -13,7 +13,7 @@ import {
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 
-const page = () => {
+const Dashboard = () => {
   const router = useRouter();
   const Tools = [
     {
@@ -84,4 +84,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Dashboard;

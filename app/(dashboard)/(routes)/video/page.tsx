@@ -16,7 +16,7 @@ import { useProModal } from "@/hooks/use-pro-modal";
 import toast from "react-hot-toast";
 type Props = {};
 
-const page = (props: Props) => {
+const VideoPage = (props: Props) => {
   const { onOpen } = useProModal();
   const router = useRouter();
   const [video, setVideo] = useState<string>();
@@ -113,4 +113,4 @@ const page = (props: Props) => {
   );
 };
 
-export default page;
+export default VideoPage;

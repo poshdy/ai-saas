@@ -6,7 +6,7 @@ import React from "react";
 
 type Props = {};
 
-const page = async (props: Props) => {
+const SettingsPage = async (props: Props) => {
   const isPro = await checkSubscription();
   return (
     <section>
@@ -28,4 +28,4 @@ const page = async (props: Props) => {
   );
 };
 
-export default page;
+export default SettingsPage;

@@ -27,7 +27,7 @@ import { useRouter } from "next/navigation";
 import { useProModal } from "@/hooks/use-pro-modal";
 import toast from "react-hot-toast";
 
-const page = () => {
+const ImagePage = () => {
   const { onOpen } = useProModal();
   const router = useRouter();
   const [Images, setImages] = useState<string[]>([]);
@@ -184,4 +184,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ImagePage;
