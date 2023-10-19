@@ -22,7 +22,7 @@ import toast from "react-hot-toast";
 
 type Props = {};
 
-const page = (props: Props) => {
+const ConversationPage = (props: Props) => {
   const { onOpen } = useProModal();
   const router = useRouter();
   const [messages, setMessages] = useState<ChatCompletionMessageParam[]>([]);
@@ -135,4 +135,4 @@ const page = (props: Props) => {
   );
 };
 
-export default page;
+export default ConversationPage;
