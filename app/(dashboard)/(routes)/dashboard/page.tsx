@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { Card } from "@/components/ui/card";
 import {
@@ -11,10 +10,10 @@ import {
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { useRouter } from "next/navigation";
+
+import Link from "next/link";
 
 const Dashboard = () => {
-  const router = useRouter();
   const Tools = [
     {
       name: "Conversation",
@@ -66,17 +65,18 @@ const Dashboard = () => {
       <div className="space-y-6 ">
         {Tools.map((tool) => (
           <Card
-            onClick={() => router.push(tool.href)}
             className="bg-[#121212] p-4 border-black/5 flex items-center justify-between hover:shadow-md transition cursor-pointer "
             key={tool.href}
           >
-            <div className="flex items-center gap-x-4">
-              <div className={cn("p-2 w-fit rounded-md", tool.bgColor)}>
-                <tool.icon className={cn("w-8 h-8", tool.color)} />
+            <Link href={tool.href}>
+              <div className="flex items-center gap-x-4">
+                <div className={cn("p-2 w-fit rounded-md", tool.bgColor)}>
+                  <tool.icon className={cn("w-8 h-8", tool.color)} />
+                </div>
+                <h4 className="font-semibold text-primary">{tool.name}</h4>
               </div>
-              <h4 className="font-semibold text-primary">{tool.name}</h4>
-            </div>
-            <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </Card>
         ))}
       </div>
