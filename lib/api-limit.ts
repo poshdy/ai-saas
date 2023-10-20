@@ -1,9 +1,6 @@
 import { MAX_FREE_TRAILS } from "@/constants";
 import { auth } from "@clerk/nextjs";
 import prismadb from "./prismadb";
-import { error } from "console";
-
-/// increase api limit by one when the user use it in the free tier
 
 export const increaseApiLimit = async () => {
   const { userId } = auth();
@@ -36,7 +33,7 @@ export const increaseApiLimit = async () => {
   }
 };
 
-// check if user exceed api limit
+
 
 export const checkAiLimit = async () => {
   const { userId } = auth();
