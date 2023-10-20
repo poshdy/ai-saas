@@ -1,22 +1,26 @@
-import { cn } from "@/lib/utils";
-
-import image from "next/image";
-
+"use client";
 import React from "react";
-import { Card } from "./ui/card";
 import {
-  ArrowRight,
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+
+import {
+  Code,
   Code2,
   ImageIcon,
-  LucideMusic4,
+  LucideMusic2,
   MessagesSquare,
   Video,
 } from "lucide-react";
 
-type Props = {};
+import Link from "next/link";
 
- const Content = (props: Props) => {
- const Tools = [
+const NavigationItems = () => {
+  const Tools = [
     {
       name: "Conversation",
       desc: "Fuel conversations with UR AI PAL. Chat like never before. Great for chatbots and customer support. Elevate interactions!",
@@ -40,7 +44,7 @@ type Props = {};
     },
     {
       name: "Music Generation",
-      icon: LucideMusic4,
+      icon: LucideMusic2,
       desc: "Amplify music with UR AI PAL. Compose melodies effortlessly. For musicians and songwriters. Let creativity flow!",
       color: "text-yellow-700",
       bgColor: "bg-yellow-700/10",
@@ -54,26 +58,34 @@ type Props = {};
     },
   ];
   return (
-    <div className="my-20 flex flex-wrap  gap-2 justify-center">
-      {Tools.map((tool) => (
-        <Card
-          className="bg-[#121212] max-w-xl  p-4 border-black/5 flex items-center justify-between hover:shadow-md transition cursor-pointer "
-          key={tool.name}
-        >
-          <div className="flex items-center gap-x-4">
-            <div className={cn("p-2 w-fit rounded-md", tool.bgColor)}>
-              <tool.icon className={cn("w-8 h-8", tool.color)} />
-            </div>
-            <div className="flex-col flex gap-1 text-primary">
-              <h4 className="font-semibold ">{tool.name}</h4>
-              <p className="font-light  text-sm">{tool.desc}</p>
-            </div>
-          </div>
-          <ArrowRight className="w-5 h-5" />
-        </Card>
-      ))}
-    </div>
+    <NavigationMenu>
+      <NavigationMenuList>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger className="bg-transparent">
+            <Link href={"/"}> Home</Link>
+          </NavigationMenuTrigger>
+        </NavigationMenuItem>
+        <NavigationMenuItem className="border-0">
+          <NavigationMenuTrigger className="bg-transparent">
+            Products
+          </NavigationMenuTrigger>
+          <NavigationMenuContent className="bg-black border-0">
+            <ul className="grid w-[400px] gap-3 p-5 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+              {Tools.map((tool) => (
+                <div
+                  className="space-y-2 p-3 rounded-md hover:bg-white/10 "
+                  key={tool.name}
+                >
+                  <h4 className="font-bold text-lg">{tool.name}</h4>
+                  <p className="text-xs text-primary">{tool.desc}</p>
+                </div>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+    </NavigationMenu>
   );
 };
 
-export default Content;
+export default NavigationItems;

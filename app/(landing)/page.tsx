@@ -5,13 +5,10 @@ import Slider from "@/components/Slider";
 
 import React from "react";
 
-type Props = {};
-
-const page = (props: Props) => {
+const LandingPage = () => {
   return (
     <section className="">
       <LandingNav />
-
       <Hero />
       <Slider />
       <Content />
@@ -19,4 +16,4 @@ const page = (props: Props) => {
   );
 };
 
-export default page;
+export default LandingPage;

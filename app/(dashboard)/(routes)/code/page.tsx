@@ -113,7 +113,6 @@ const CodePage = (props: Props) => {
             <Loader />
           </div>
         )}
-        {!messages && !isLoading && <h1>No Conversation generated</h1>}
         <div className="flex flex-col-reverse gap-y-4 mb-2">
           {messages.map((message) => (
             <div

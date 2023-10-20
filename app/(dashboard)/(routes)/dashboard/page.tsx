@@ -65,10 +65,10 @@ const Dashboard = () => {
       <div className="space-y-6 ">
         {Tools.map((tool) => (
           <Card
-            className="bg-[#121212] p-4 border-black/5 flex items-center justify-between hover:shadow-md transition cursor-pointer "
+            className="bg-[#121212] p-4  border-black/5 flex items-center justify-between hover:shadow-md transition cursor-pointer "
             key={tool.href}
           >
-            <Link href={tool.href}>
+            <Link className="flex justify-between w-full items-center" href={tool.href}>
               <div className="flex items-center gap-x-4">
                 <div className={cn("p-2 w-fit rounded-md", tool.bgColor)}>
                   <tool.icon className={cn("w-8 h-8", tool.color)} />

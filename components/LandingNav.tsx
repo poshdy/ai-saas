@@ -1,8 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "./ui/button";
-
-type Props = {};
+import NavigationItems from "./NavigationItems";
 
 const LandingNav = () => {
   return (
@@ -10,13 +9,18 @@ const LandingNav = () => {
       <h1 className="font-bold text-2xl">UR AI PAL</h1>
       {/* <Logo /> */}
       <div>
+        <NavigationItems />
+      </div>
+      <div>
         <Link href={"/sign-in"}>
           <Button variant={"ghost"} className="">
-            Sign in
+           Dashboard
           </Button>
         </Link>
         <Link href={"/sign-up"}>
-          <Button className="rounded-full bg-purple-500 text-white ">Free Trial!</Button>
+          <Button variant={"pre"} className="bg-purple-700  font-extrabold text-white  hover:bg-purple-800 transition">
+            Free Trial
+          </Button>
         </Link>
       </div>
     </nav>
@@ -24,3 +28,5 @@ const LandingNav = () => {
 };
 
 export default LandingNav;
+{
+}

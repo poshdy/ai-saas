@@ -92,7 +92,7 @@ const ConversationPage = (props: Props) => {
                          focus-visible:ring-transparent
                           bg-transparent"
                       disabled={isLoading}
-                      placeholder="How I can Help Your"
+                      placeholder="How Can I assist you?"
                       {...field}
                     />
                   </FormControl>
@@ -113,13 +113,12 @@ const ConversationPage = (props: Props) => {
             <Loader />
           </div>
         )}
-        {!messages && !isLoading && <h1>No Conversation generated</h1>}
-        <div className="flex flex-col-reverse gap-y-4 mb-2">
+        <div className="flex flex-col-reverse gap-y-4 my-2">
           {messages.map((message) => (
             <div
               key={message.content}
               className={cn(
-                "p-8 w-full flex items-start gap-x-8 rounded-lg text-primary",
+                "p-8 w-full flex items-start gap-x-8 rounded-lg my-1 text-primary",
                 message.role === "user"
                   ? " border bg-black/25 "
                   : "bg-[#121212]"

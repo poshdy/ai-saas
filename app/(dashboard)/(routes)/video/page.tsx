@@ -102,7 +102,7 @@ const VideoPage = (props: Props) => {
             <Loader />
           </div>
         )}
-        {!video && !isLoading && <h1>No Video generated</h1>}
+
         {video && (
           <video controls className="w-full mt-8 aspect-video">
             <source src={video} />

@@ -102,7 +102,6 @@ const MusicPage = (props: Props) => {
             <Loader />
           </div>
         )}
-        {!music && !isLoading && <h1>No Music generated</h1>}
         {music && (
           <audio controls className="w-full mt-8">
             <source src={music} />
